@@ -27,9 +27,18 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+	if (!Yii::app()->user->id)
+            {
+            $this->redirect('site/login');
+            }
+        else
+            {
+            $user = User::model()->find('id=:id', array(':id'=>Yii::app()->user->id));;
+            }
+
+        $this->render('index', array(
+            'user' => $user,
+        ));
 	}
 
 	/**
@@ -72,30 +81,84 @@ class SiteController extends Controller
 		$this->render('contact',array('model'=>$model));
 	}
 
+        /**
+     * Displays the register page
+     */
+    public function actionRegister()
+        {
+        $this->layout = '/layouts/login';
+        if (Yii::app()->user->id)
+            {
+            $this->redirect(Yii::app()->user->returnUrl);
+            }
+        $model = new RegisterForm;
+        $newUser = new User;
+
+        if (isset($_POST['ajax']))
+            {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+            }
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form')
+            {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+            }
+
+        // collect user input data
+        if (isset($_POST['RegisterForm']))
+            {
+            $model->attributes = $_POST['RegisterForm'];
+            $newUser->username = $model->username;
+            $newUser->salt = uniqid(mt_rand(), true);
+            $newUser->password = substr(md5($model->password . $newUser->salt), 0, 256);
+            $newUser->email = $model->email;
+            $newUser->date_entered = date('Y-m-d');
+            $newUser->type = 'public';
+
+            if ($newUser->save())
+                {
+                $identity = new UserIdentity($newUser->username, $model->password);
+                $identity->authenticate();
+                Yii::app()->user->login($identity, 0);
+                //redirect the user to page he/she came from
+                $this->redirect(Yii::app()->user->returnUrl);
+                }
+            }
+        // display the register form
+        $this->render('register', array('model' => $model));
+        }
 	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
-		$model=new LoginForm;
+	$this->layout = '/layouts/login';
+        if (Yii::app()->user->id)
+            {
+            $this->redirect(Yii::app()->user->returnUrl);
+            }
+        $model = new LoginForm;
 
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form')
+            {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+            }
 
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
+        // collect user input data
+        if (isset($_POST['LoginForm']))
+            {
+            $model->attributes = $_POST['LoginForm'];
+            // validate user input and redirect to the previous page if valid
+            if ($model->validate() && $model->login())
+                $this->redirect(Yii::app()->user->returnUrl);
+            }
+        // display the login form
+        $this->render('login', array('model' => $model));
 	}
 
 	/**
