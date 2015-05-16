@@ -1,32 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "user".
+ * This is the model class for table "settings".
  *
- * The followings are the available columns in table 'user':
+ * The followings are the available columns in table 'settings':
  * @property string $id
- * @property string $username
- * @property string $email
- * @property string $password
- * @property string $type
- * @property string $date_entered
- * @property integer $account
- * @property integer $gameId
- * @property string $salt
+ * @property integer $view
+ * @property string $gmail
+ * @property string $yandex
+ * @property string $mail
+ * @property string $vktoken
+ * @property string $fbtoken
+ * @property string $userId
  *
  * The followings are the available model relations:
- * @property Comment[] $comments
- * @property File[] $files
- * @property Page[] $pages
+ * @property Users $user
  */
-class User extends CActiveRecord
+class Settings extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'settings';
 	}
 
 	/**
@@ -37,16 +34,14 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, email, password, type, date_entered, salt', 'required'),
-			array('account, gameId', 'numerical', 'integerOnly'=>true),
-			array('username', 'length', 'max'=>45),
-			array('email', 'length', 'max'=>60),
-			array('password', 'length', 'max'=>256),
-			array('type', 'length', 'max'=>6),
-			array('salt', 'length', 'max'=>256),
+			array('gmail, yandex, mail, vktoken, fbtoken, userId', 'required'),
+			array('view', 'numerical', 'integerOnly'=>true),
+			array('gmail', 'length', 'max'=>45),
+			array('yandex, mail, vktoken, fbtoken', 'length', 'max'=>60),
+			array('userId', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, email, password, type, date_entered, account, gameId, salt', 'safe', 'on'=>'search'),
+			array('id, view, gmail, yandex, mail, vktoken, fbtoken, userId', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,9 +53,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'comments' => array(self::HAS_MANY, 'Comment', 'user_id'),
-			'files' => array(self::HAS_MANY, 'File', 'user_id'),
-			'pages' => array(self::HAS_MANY, 'Page', 'user_id'),
+			'user' => array(self::BELONGS_TO, 'Users', 'userId'),
 		);
 	}
 
@@ -71,14 +64,13 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => 'Username',
-			'email' => 'Email',
-			'password' => 'Password',
-			'type' => 'Type',
-			'date_entered' => 'Date Entered',
-			'account' => 'Account',
-			'gameId' => 'Game',
-			'salt' => 'Salt',
+			'view' => 'View',
+			'gmail' => 'Gmail',
+			'yandex' => 'Yandex',
+			'mail' => 'Mail',
+			'vktoken' => 'Vktoken',
+			'fbtoken' => 'Fbtoken',
+			'userId' => 'User',
 		);
 	}
 
@@ -101,14 +93,13 @@ class User extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('date_entered',$this->date_entered,true);
-		$criteria->compare('account',$this->account);
-		$criteria->compare('gameId',$this->gameId);
-		$criteria->compare('salt',$this->salt,true);
+		$criteria->compare('view',$this->view);
+		$criteria->compare('gmail',$this->gmail,true);
+		$criteria->compare('yandex',$this->yandex,true);
+		$criteria->compare('mail',$this->mail,true);
+		$criteria->compare('vktoken',$this->vktoken,true);
+		$criteria->compare('fbtoken',$this->fbtoken,true);
+		$criteria->compare('userId',$this->userId,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -119,7 +110,7 @@ class User extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return User the static model class
+	 * @return Settings the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

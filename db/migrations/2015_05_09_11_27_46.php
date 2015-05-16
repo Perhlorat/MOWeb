@@ -6,7 +6,7 @@ class Migration_2015_05_09_11_27_46 extends MpmMigration
 	public function up(PDO &$pdo)
 		{
 		$pdo->exec("
-			CREATE TABLE IF NOT EXISTS `user` (
+			CREATE TABLE IF NOT EXISTS `users` (
 				`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 				`username` varchar(45) NOT NULL,
 				`email` varchar(60) NOT NULL,
@@ -25,7 +25,7 @@ class Migration_2015_05_09_11_27_46 extends MpmMigration
 	public function down(PDO &$pdo)
 	{
 		$pdo->exec("
-			DROP TABLE `user`;
+			DROP TABLE `users`;
 		");
 		
 	}
