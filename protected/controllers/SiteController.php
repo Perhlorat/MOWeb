@@ -12,7 +12,7 @@ class SiteController extends Controller
                 $this->redirect('site/login');
             }
             else {
-                $user = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));;
+                $user = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));
             }
         }
     }
@@ -48,12 +48,15 @@ class SiteController extends Controller
         else {
             $user = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));;
             $settings = Settings::model()->find('userId=:userId', array(':userId' => $user->id));
+            $widgets = Widgets::model()->findAll('userId=:userId', array(':userId' => $user->id));
         }
 
         $settings = json_encode($settings->getAttributes());
+        $widgets =  CJSON::encode($widgets);
         $this->render('index', array(
             'user'     => $user,
-            'settings' => $settings
+            'settings' => $settings,
+            'posts' => $widgets
         ));
     }
 
@@ -196,6 +199,78 @@ class SiteController extends Controller
                 $settings->update();
             }
             echo json_encode(array("msg" => "ok", "settings" => $settings->getAttributes()));
+            Yii::app()->end();
+        }
+    }
+
+    /**
+     * Set settings action
+     */
+    public function actionAddPost()
+    {
+        if (!Yii::app()->user->id) {
+            echo json_encode(array('msg' => 'Error'));
+            Yii::app()->end();
+        }
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'add-post') {
+            $widget = new Widgets();
+            $widget->userId = Yii::app()->user->id;
+            $widget->type = 'default';
+            $widget->save();
+            echo json_encode(array("msg" => "ok", "widget" => $widget->getAttributes()));
+            Yii::app()->end();
+        }
+        else {
+            echo json_encode(array("msg" => "Error"));
+            Yii::app()->end();
+        }
+    }
+
+    /**
+     * Set settings action
+     */
+    public function actionRemovePost()
+    {
+        if (!Yii::app()->user->id) {
+            echo json_encode(array('msg' => 'Error'));
+            Yii::app()->end();
+        }
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'remove-post') {
+            $widget = Widgets::model()->find('id=:id', array(':id' => $_POST["id"]));
+            $widget->delete();
+            echo json_encode(array("msg" => "ok"));
+            Yii::app()->end();
+        }
+        else {
+            echo json_encode(array("msg" => "Error"));
+            Yii::app()->end();
+        }
+    }
+
+    /**
+     * Set settings action
+     */
+    public function actionEditPost()
+    {
+        if (!Yii::app()->user->id) {
+            echo json_encode(array('msg' => 'Error'));
+            Yii::app()->end();
+        }
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'edit-post') {
+            $widget = new Widgets();
+            $widget->userId = Yii::app()->user->id;
+            $widget->type = 'default';
+            echo json_encode(array("msg" => "ok", "widget" => $widget->getAttributes()));
+            Yii::app()->end();
+        }
+        else {
+            echo json_encode(array("msg" => "Error"));
             Yii::app()->end();
         }
     }

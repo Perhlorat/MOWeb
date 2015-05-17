@@ -287,6 +287,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bower_components/roboto-fontface/css/roboto-fontface.css"/>
 
     <script src="/assets/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <script src="/assets/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/assets/js/jquery-ui/jquery-ui.min.css"/>
+
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/bower_components/classie/classie.js"></script>
     <!-- 1. Load platform support before any code that touches the DOM. -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/bower_components/webcomponentsjs/webcomponents.min.js"></script>
@@ -311,6 +315,8 @@
 
     <link rel="import"
           href="<?php echo Yii::app()->request->baseUrl; ?>/bower_components/paper-toggle-button/paper-toggle-button.html"/>
+    <link rel="import"
+          href="<?php echo Yii::app()->request->baseUrl; ?>/bower_components/core-animated-pages/core-animated-pages.html"/>
     <!-- 2. Load the component using an HTML Import -->
     <link rel="import" href="/polymer/moweb-app/"/>
     <link rel="import" href="/polymer/app-globals/"/>
