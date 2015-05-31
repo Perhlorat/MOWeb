@@ -121,7 +121,7 @@
 
     .card {
         display: block;
-        margin: 64px 0px 0px 0;
+        margin: 0px 0px 40px 0;
         background-color: #fff;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
         border-radius: 2px;
@@ -130,15 +130,18 @@
     }
 
     .draggable {
-        position: absolute;
         background-color: #ffffff;
     }
 
     .draggable paper-icon-button {
         color: #000000;
     }
+
+    .container {
+        margin-top: 10px;;
+    }
 </style>
-<core-toolbar style="background: #3f51b5;">
+<core-toolbar style="background: #3f51b5; z-index: 1">
     <a href="javascript:void(0)" id="menuIcon" on-click="{{clickHandler}}">
         <paper-icon-button icon="menu"></paper-icon-button>
     </a>
@@ -179,19 +182,43 @@
         <paper-button on-click="{{doSend}}" raised style="margin: 0 auto;">Send</paper-button>
     </div>
 </nav>
-<div id="container">
-    <template repeat="{{ post in posts }}">
-        <div class="card draggable"
-             style=" top:[[post.top]]px; left:[[post.left]]px; width: [[post.width]]px; height:[[posts.height]]px"
-             id="card[[post.id]]">
-            <core-toolbar style="background: #ffffff;">
-                <div horizontal end-justified layout flex>
-                    <paper-input label="url" value="{{post.url}}"></paper-input>
-                </div>
-                <paper-icon-button id="close[[post.id]]" icon="close" on-click="{{removePost}}"></paper-icon-button>
-            </core-toolbar>
+<core-animated-pages transitions="cross-fade">
+    <div layout vertical flex style="width: 100%; z-index:99">
+        <div fit hero-p>
+            <div class="container" flex horizontal wrap around-justified layout cross-fade>
+                <template repeat="{{ post in posts }}">
+                    <section>
+                        <div class="card draggable" vertical center center-justified layout cross-fade
+                             hero-id="card[[post.id]]" hero
+                             style="width: 560px;  height: 315px;"
+                             id="card[[post.id]]">
+                            <core-toolbar style="background: #ffffff;">
+                                <div horizontal end-justified layout flex>
+                                    <paper-input id="cardInput[[post.id]]" label="url" value="{{post.url}}"
+                                                 on-change="{{postChangeHandler}}"></paper-input>
+                                </div>
+                                <paper-icon-button id="close[[post.id]]" icon="close"
+                                                   on-click="{{removePost}}"></paper-icon-button>
+                            </core-toolbar>
+                            <template if="{{post.url != ''}}">
+                                <iframe src="{{post.url}}" width="560" height="315" allowfullscreen
+                                        frameborder="0"></iframe>
+                            </template>
+                            <template if="{{post.url == ''}}">
+                                <div layout horizontal center
+                                     style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                                    <div style="margin:0 auto">
+                                        <span style="color:#000000">Empty Url</span>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </section>
+                </template>
+            </div>
         </div>
-    </template>
+    </div>
+</core-animated-pages>
 </div>
 <core-ajax id="ajax"
            auto="false"
@@ -292,7 +319,32 @@
                             break;
                         }
                     }
+                },
+                error: function () {
 
+                }
+            });
+        },
+
+        postChangeHandler: function (event, detail, sender) {
+            var id = sender.id;
+            var postId = id.substr(9);
+            test = 1;
+
+            $.ajax({
+                method: "POST",
+                url: "/site/edit-post",
+                data: { id: postId, url: sender.value, ajax: "update-post" },
+                success: function (data) {
+                    var counter = 0;
+                    var jsonData = JSON.parse(data);
+                    var widget = jsonData.widget
+                    for (var i = 0; i < polymerElement.posts.length; i++) {
+                        if (polymerElement.posts[i].id == postId) {
+                            polymerElement.posts[i] = widget;
+                            break;
+                        }
+                    }
                 },
                 error: function () {
 

@@ -262,10 +262,10 @@ class SiteController extends Controller
         }
 
         // if it is ajax validation request
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'edit-post') {
-            $widget = new Widgets();
-            $widget->userId = Yii::app()->user->id;
-            $widget->type = 'default';
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'update-post') {
+            $widget =  Widgets::model()->find('id=:id', array(':id' => $_POST["id"]));
+            $widget->url = $_POST["url"];
+            $widget->update();
             echo json_encode(array("msg" => "ok", "widget" => $widget->getAttributes()));
             Yii::app()->end();
         }
