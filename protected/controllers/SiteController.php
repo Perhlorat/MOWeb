@@ -37,30 +37,6 @@ class SiteController extends Controller
     }
 
     /**
-     * This is the default 'index' action that is invoked
-     * when an action is not explicitly requested by users.
-     */
-    public function actionIndex()
-    {
-        if (!Yii::app()->user->id) {
-            $this->redirect('site/login');
-        }
-        else {
-            $user = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));;
-            $settings = Settings::model()->find('userId=:userId', array(':userId' => $user->id));
-            $widgets = Widgets::model()->findAll('userId=:userId', array(':userId' => $user->id));
-        }
-
-        $settings = json_encode($settings->getAttributes());
-        $widgets =  CJSON::encode($widgets);
-        $this->render('index', array(
-            'user'     => $user,
-            'settings' => $settings,
-            'posts' => $widgets
-        ));
-    }
-
-    /**
      * This is the action to handle external exceptions.
      */
     public function actionError()
@@ -72,6 +48,7 @@ class SiteController extends Controller
                 $this->render('error', $error);
         }
     }
+
 
     /**
      * Displays the contact page
@@ -94,6 +71,87 @@ class SiteController extends Controller
             }
         }
         $this->render('contact', array('model' => $model));
+    }
+
+    /**
+     * This is the default 'index' action that is invoked
+     * when an action is not explicitly requested by users.
+     */
+    public function actionIndex()
+    {
+        if (!Yii::app()->user->id) {
+            $this->redirect('site/login');
+        }
+        else {
+            $user = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));;
+            $settings = Settings::model()->find('userId=:userId', array(':userId' => $user->id));
+            $widgets = Widgets::model()->findAll('userId=:userId', array(':userId' => $user->id));
+        }
+
+        $settings = json_encode($settings->getAttributes());
+        $widgets = CJSON::encode($widgets);
+        $this->render('index', array(
+            'user'     => $user,
+            'settings' => $settings,
+            'posts'    => $widgets
+        ));
+    }
+
+    //Wolfram widget
+    public function actionWolfram()
+    {
+        $this->layout = 'empty';
+        $this->render('wolfram');
+    }
+
+    //flickr API
+    public function actionFlickr()
+    {
+        #
+# build the API URL to call
+#
+
+        $params = array(
+            'api_key'  => 'e9b7aaa9614a5b38db1e24808681bfc5',
+            'method'   => 'flickr.urls.lookupUser',
+            'username' => 'robmacklin',
+            'format'   => 'php_serial',
+        );
+
+        $encoded_params = array();
+
+        foreach ($params as $k => $v) {
+
+            $encoded_params[] = urlencode($k) . '=' . urlencode($v);
+        }
+
+
+#
+# call the API and decode the response
+#
+
+        $url = "https://api.flickr.com/services/rest/?" . implode('&', $encoded_params);
+
+        $rsp = file_get_contents($url);
+
+        $rsp_obj = unserialize($rsp);
+
+
+#
+# display the photo title (or an error if it failed)
+#
+
+        if ($rsp_obj['stat'] == 'ok') {
+
+            $photo_title = $rsp_obj['photo']['title']['_content'];
+
+            echo "Title is $photo_title!";
+        }
+        else {
+
+            echo "Call failed!";
+        }
+        $this->layout = 'empty';
     }
 
     /**
@@ -204,7 +262,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Set settings action
+     * Add post action
      */
     public function actionAddPost()
     {
@@ -217,7 +275,7 @@ class SiteController extends Controller
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'add-post') {
             $widget = new Widgets();
             $widget->userId = Yii::app()->user->id;
-            $widget->type = 'default';
+            $widget->type = $_POST["addType"];
             $widget->save();
             echo json_encode(array("msg" => "ok", "widget" => $widget->getAttributes()));
             Yii::app()->end();
@@ -229,7 +287,33 @@ class SiteController extends Controller
     }
 
     /**
-     * Set settings action
+     * Upload file action
+     */
+    public function actionUploadFile()
+    {
+        if (!Yii::app()->user->id) {
+            echo json_encode(array('msg' => 'Error'));
+            Yii::app()->end();
+        }
+        $uploadDir = Yii::app()->params['webRoot']->path . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR;
+        $uploadFile = $uploadDir . basename($_FILES['File']['name']);
+
+        try {
+            if (move_uploaded_file($_FILES['File']['tmp_name'], $uploadFile)) {
+                echo json_encode(array("msg" => "ok", "filename" => '/files/' . $_FILES['File']['name']));
+            }
+            else {
+                echo json_encode(array("msg" => "err"));
+            }
+        }
+        catch (Exception $e) {
+            echo json_encode(array("msg" => "err"));
+        }
+        Yii::app()->end();
+    }
+
+    /**
+     * Remove post action
      */
     public function actionRemovePost()
     {
@@ -252,7 +336,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Set settings action
+     * Udit widget action
      */
     public function actionEditPost()
     {
@@ -263,8 +347,15 @@ class SiteController extends Controller
 
         // if it is ajax validation request
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'update-post') {
-            $widget =  Widgets::model()->find('id=:id', array(':id' => $_POST["id"]));
-            $widget->url = $_POST["url"];
+            $widget = Widgets::model()->find('id=:id', array(':id' => $_POST["id"]));
+            $matches = array();
+            preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $_POST["url"], $matches);
+            if ($matches[0]) {
+                $widget->url = 'https://www.youtube.com/embed/'.$matches[0];
+            }
+            else {
+                $widget->url = $_POST["url"];
+            }
             $widget->update();
             echo json_encode(array("msg" => "ok", "widget" => $widget->getAttributes()));
             Yii::app()->end();
@@ -279,6 +370,15 @@ class SiteController extends Controller
      * Logs out the current user and redirect to homepage.
      */
     public function actionLogout()
+    {
+        Yii::app()->user->logout();
+        $this->redirect(Yii::app()->homeUrl);
+    }
+
+    /**
+     * Logs out the current user and redirect to homepage.
+     */
+    public function actionParse()
     {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);

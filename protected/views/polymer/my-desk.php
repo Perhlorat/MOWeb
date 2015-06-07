@@ -32,6 +32,7 @@
     .cbp-spmenu {
         background: #ffffff;
         position: fixed;
+        z-index: 100 !important;
     }
 
     .cbp-spmenu h3 {
@@ -50,13 +51,17 @@
         font-weight: 300;
     }
 
+    .cbpsmenu-inner {
+        margin-top: 64px;
+    }
+
     /* Orientation-dependent styles for the content of the menu */
 
     .cbp-spmenu-vertical {
         width: 320px;
         height: 100%;
         top: 0;
-        z-index: 1000;
+        z-index: 10;
     }
 
     .cbp-spmenu-vertical a {
@@ -81,12 +86,12 @@
 
     .cbp-spmenu-left {
         left: -320px;
-        top: 64px;
+        top: 0px;
     }
 
     .cbp-spmenu-left.cbp-spmenu-open {
         left: 0px;
-        top: 64px;
+        top: 0px;
         box-shadow: 6px -1px 4px -1px rgba(0, 0, 0, 0.3);
     }
 
@@ -100,6 +105,10 @@
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
         transition: all 0.3s ease;
+    }
+
+    .cbp-spmenu .settingDiv paper-button {
+        margin-top: 10px;
     }
 
     @media screen and (max-height: 26.375em) {
@@ -121,7 +130,7 @@
 
     .card {
         display: block;
-        margin: 0px 0px 40px 0;
+        margin: 5px 5px 5px 5px;
         background-color: #fff;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
         border-radius: 2px;
@@ -141,11 +150,11 @@
         margin-top: 10px;;
     }
 </style>
-<core-toolbar style="background: #3f51b5; z-index: 1">
+<core-toolbar style="background: #3f51b5; z-index: 999; position: fixed; width:100%; top:0">
     <a href="javascript:void(0)" id="menuIcon" on-click="{{clickHandler}}">
         <paper-icon-button icon="menu"></paper-icon-button>
     </a>
-    <a href="javascript:void(0)" id="menuIcon" on-click="{{handleAdd}}">
+    <a href="javascript:void(0)" id="menuAdd" on-click="{{clickHandler}}">
         <paper-icon-button icon="add"></paper-icon-button>
     </a>
 
@@ -156,70 +165,309 @@
 </core-toolbar>
 <!-- body has the class "cbp-spmenu-push" -->
 <nav layout vertical center class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbpspmenus1">
-    <h3>Settings</h3>
+    <div class="cbpsmenu-inner">
+        <h3>Settings</h3>
 
-    <div center horizontal layout class="settingDiv">
-        <div flex>Custom view</div>
-        <template if="{{ settings.view == 0 }}">
-            <paper-toggle-button value={{settings.view}} on-change="{{handleToggle}}"
-                                 id="settingsView"></paper-toggle-button>
-        </template>
-        <template if="{{ settings.view == 1 }}">
-            <paper-toggle-button value={{settings.view}} on-change="{{handleToggle}}" id="settingsView"
-                                 checked></paper-toggle-button>
-        </template>
-    </div>
-    <div center horizontal layout class="settingDiv">
-        <paper-input flex floatingLabel label="Gmail email" value="{{settings.gmail}}"></paper-input>
-    </div>
-    <div center horizontal layout class="settingDiv">
-        <paper-input flex floatingLabel label="Yandex email" value="{{settings.yandex}}"></paper-input>
-    </div>
-    <div center horizontal layout class="settingDiv">
-        <paper-input flex floatingLabel label="Mail.ru email" value="{{settings.mail}}"></paper-input>
-    </div>
-    <div center horizontal layout class="settingDiv">
-        <paper-button on-click="{{doSend}}" raised style="margin: 0 auto;">Send</paper-button>
+        <div center horizontal layout class="settingDiv">
+            <div flex>Custom view</div>
+            <template if="{{ settings.view == 0 }}">
+                <paper-toggle-button value={{settings.view}} on-change="{{handleToggle}}"
+                                     id="settingsView"></paper-toggle-button>
+            </template>
+            <template if="{{ settings.view == 1 }}">
+                <paper-toggle-button value={{settings.view}} on-change="{{handleToggle}}" id="settingsView"
+                                     checked></paper-toggle-button>
+            </template>
+        </div>
+        <div center horizontal layout class="settingDiv">
+            <paper-input flex floatingLabel label="Gmail email" value="{{settings.gmail}}"></paper-input>
+        </div>
+        <div center horizontal layout class="settingDiv">
+            <paper-input flex floatingLabel label="Yandex email" value="{{settings.yandex}}"></paper-input>
+        </div>
+        <div center horizontal layout class="settingDiv">
+            <paper-input flex floatingLabel label="Mail.ru email" value="{{settings.mail}}"></paper-input>
+        </div>
+        <div center horizontal layout class="settingDiv">
+            <paper-button on-click="{{doSend}}" raised style="margin: 0 auto;">Send</paper-button>
+        </div>
     </div>
 </nav>
-<core-animated-pages transitions="cross-fade">
-    <div layout vertical flex style="width: 100%; z-index:99">
-        <div fit hero-p>
-            <div class="container" flex horizontal wrap around-justified layout cross-fade>
-                <template repeat="{{ post in posts }}">
-                    <section>
-                        <div class="card draggable" vertical center center-justified layout cross-fade
-                             hero-id="card[[post.id]]" hero
-                             style="width: 560px;  height: 315px;"
-                             id="card[[post.id]]">
-                            <core-toolbar style="background: #ffffff;">
-                                <div horizontal end-justified layout flex>
-                                    <paper-input id="cardInput[[post.id]]" label="url" value="{{post.url}}"
-                                                 on-change="{{postChangeHandler}}"></paper-input>
-                                </div>
-                                <paper-icon-button id="close[[post.id]]" icon="close"
-                                                   on-click="{{removePost}}"></paper-icon-button>
-                            </core-toolbar>
-                            <template if="{{post.url != ''}}">
-                                <iframe src="{{post.url}}" width="560" height="315" allowfullscreen
-                                        frameborder="0"></iframe>
-                            </template>
-                            <template if="{{post.url == ''}}">
-                                <div layout horizontal center
-                                     style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
-                                    <div style="margin:0 auto">
-                                        <span style="color:#000000">Empty Url</span>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-                    </section>
-                </template>
+<nav layout vertical center class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbpspmenus2">
+    <div class="cbpsmenu-inner">
+        <h3>Add menu</h3>
+
+        <div center horizontal layout center-justified wrap class="settingDiv">
+            <div layout center-justified vertical wrap>
+                <paper-button raised on-tap="{{handleAdd}}" id="addDefault">
+                    Default
+                </paper-button>
+                <paper-button raised on-tap="{{handleAdd}}" id="addIcon">
+                    Icon
+                </paper-button>
+                <paper-button raised on-tap="{{handleAdd}}" id="addClock">
+                    Clock
+                </paper-button>
+                <paper-button raised on-tap="{{handleAdd}}" id="addGoogleCalendar">
+                    Google Calendar
+                </paper-button>
+                <paper-button raised on-tap="{{handleAdd}}" id="addWeather">
+                    Weather
+                </paper-button>
+                <paper-button raised on-tap="{{handleAdd}}" id="addMaps">
+                    Maps
+                </paper-button>
+                <paper-button raised on-tap="{{handleAdd}}" id="addFlickr">
+                    Flickr Gallery
+                </paper-button>
             </div>
         </div>
     </div>
-</core-animated-pages>
+</nav>
+<div layout vertical flex style="width: 100%;z-index:99; margin-top:64px;">
+<div class="container" flex horizontal wrap around-justified layout>
+<template repeat="{{ post in posts }}">
+<template if="{{post.type == 'default'}}">
+    <div class="wrapper-div">
+        <div class="card draggable" vertical center center-justified layout
+             style="  width: 480px;   height: 350px;"
+             id="card[[post.id]]">
+            <core-toolbar style="background: #ffffff; width: 100%;">
+                <div horizontal center-justified layout style="width:100%">
+                    <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                                 on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+                </div>
+                <paper-icon-button id="close[[post.id]]" icon="close"
+                                   on-click="{{removePost}}"></paper-icon-button>
+            </core-toolbar>
+            <template if="{{post.url != ''}}">
+                <iframe src="{{post.url}}" width="480" height="320" allowfullscreen
+                        frameborder="0"></iframe>
+            </template>
+            <template if="{{post.url == ''}}">
+                <div layout horizontal center
+                     style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                    <div style="margin:0 auto">
+                        <span style="color:#000000">Empty Url</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>
+<template if="{{post.type == 'icon'}}">
+    <div class="card draggable" vertical center center-justified layout
+         style="width: 350px;  height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <div horizontal center-justified layout class="settings" id="settings-content[[page.id]]"
+                 style="position:absolute; display:none">
+                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+                <input type="file" name="File" id="file[[post.id]]" on-change="{{setFiles}}">
+                <input type="hidden" id="filename[[post.id]]" name="filename"/>
+            </div>
+            <paper-icon-button left id="settings[[post.id]]" icon="settings"
+                               on-click="{{settingsToggle}}"></paper-icon-button>
+            <div horizontal center-justified flex>
+            </div>
+            <div horizontal end-justified layout flex></div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+        <template if="{{post.url != ''}}">
+            <a href="{{post.url}}" target="_blank" style="width: 100%; height: 100%">
+                <img style="margin: auto auto" src="http://www.google.com/s2/favicons?domain=[[post.url]]"
+                     width="64" height="64"/>
+            </a>
+        </template>
+        <template if="{{post.url == ''}}">
+            <div layout horizontal center
+                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                <div style="margin:0 auto">
+                    <span style="color:#000000">Empty Url</span>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+<template if="{{post.type == 'clock'}}">
+    <div class="card draggable" vertical center center-justified layout
+         style="width: 350px;  height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <div horizontal center-justified flex></div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+
+        <!--<template if="{{post.url != ''}}">
+            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
+                    frameborder="0"></iframe>
+        </template>-->
+        <!--<template if="{{post.url == ''}}">-->
+        <div layout horizontal center
+             style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+            <div style="margin:0 auto">
+                <iframe scrolling="no" frameborder="no"
+                        style="overflow:hidden;border:0;margin:0;padding:0;width:150px;height:150px;"
+                        src="http://www.clocklink.com/html5embed.php?clock=001&timezone=GMT0600&color=blue&size=150&Title=&Message=&Target=&From=2015,1,1,0,0,0&Color=blue"></iframe>
+            </div>
+        </div>
+        <!--</template>-->
+    </div>
+</template>
+<template if="{{post.type == 'calendar'}}">
+    <div class="card draggable" vertical center center-justified
+         style="  width: 480px;   height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <div horizontal center-justified layout style="width:100%">
+                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+            </div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+        <template if="{{post.url != ''}}">
+            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
+                    frameborder="0"></iframe>
+        </template>
+        <template if="{{post.url == ''}}">
+            <div layout horizontal center
+                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                <div style="margin:0 auto">
+                    <span style="color:#000000">Empty Url</span>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+<template if="{{post.type == 'weather'}}">
+    <div class="card draggable" vertical center center-justified layout
+         style="  width: 480px;   height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <div horizontal center-justified layout style="width:100%">
+                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+            </div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+        <template if="{{post.url != ''}}">
+            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
+                    frameborder="0"></iframe>
+        </template>
+        <template if="{{post.url == ''}}">
+            <div layout horizontal center
+                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                <div style="margin:0 auto">
+                    <span style="color:#000000">Empty Url</span>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+<template if="{{post.type == 'maps'}}">
+    <div class="card draggable" vertical center center-justified layout
+         style="  width: 480px;   height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <div horizontal center-justified layout style="width:100%">
+                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+            </div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+        <template if="{{post.url != ''}}">
+            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
+                    frameborder="0"></iframe>
+        </template>
+        <template if="{{post.url == ''}}">
+            <div layout horizontal center
+                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                <div style="margin:0 auto">
+                    <span style="color:#000000">Empty Url</span>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+<template if="{{post.type == 'flickr'}}">
+    <div class="card draggable" vertical center center-justified layout
+         style="  width: 480px;   height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <div horizontal center-justified layout style="width:100%">
+                <paper-input id="cardInput[[post.id]]" label="Enter url" value="www.flickr.com/photos/{{post.url}}"
+                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+            </div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+        <template if="{{post.url != ''}}">
+            <div style="width:480px;height:320px;text-align:center;margin:auto;">
+                <object width="480" height="320" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+                    <param name="flashvars"
+                           value="offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Fpucki%2Fshow&amp;page_show_back_url=%2Fphotos%2Fpucki%2F&amp;user_id=44542478@N03"/>
+                    <param name="allowFullScreen" value="true"/>
+                    <param name="src" value="https://www.flickr.com/apps/slideshow/show.swf?v=71649"/>
+                    <embed width="480" height="320" type="application/x-shockwave-flash"
+                           src="https://www.flickr.com/apps/slideshow/show.swf?v=71649"
+                           flashvars="offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Fpucki%2Fshow&amp;page_show_back_url=%2Fphotos%2Fpucki%2F&amp;user_id=44542478@N03"
+                           allowFullScreen="true"/>
+                </object>
+                <br/>
+                <small>Created with <a href="http://www.flickrslideshow.com">flickr slideshow</a>.</small>
+            </div>
+        </template>
+        <template if="{{post.url == ''}}">
+            <div layout horizontal center
+                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+                <div style="margin:0 auto">
+                    <span style="color:#000000">Empty Url</span>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
+<template if="{{post.type == 'wolfram'}}">
+    <div class="card draggable" vertical center center-justified layout
+         style="  width: 480px;   height: 350px;"
+         id="card[[post.id]]">
+        <core-toolbar style="background: #ffffff; width: 100%;">
+            <!--<div horizontal center-justified layout style="width:100%">
+                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+            </div>-->
+            <div horizontal center-justified flex></div>
+            <paper-icon-button id="close[[post.id]]" icon="close"
+                               on-click="{{removePost}}"></paper-icon-button>
+        </core-toolbar>
+        <div layout horizontal center
+             style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
+            <div style="margin:0 auto">
+                <iframe src="/site/wolfram" width="320" height="200" allowfullscreen
+                        frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!--<template if="{{post.url != ''}}">
+            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
+                    frameborder="0"></iframe>
+        </template>
+        <template if="{{post.url == ''}}">
+
+        </template>-->
+    </div>
+</template>
+</template>
 </div>
+</div>
+
 <core-ajax id="ajax"
            auto="false"
            method="POST"
@@ -233,146 +481,267 @@
            method="POST"
            url="{{urladd}}"
            handleas="json"
-           params='{"ajax": "add-post"}'
+           params='{"ajax": "add-post", "addType": "{{addType}}"}'
+           on-core-response="{{handleAddResponse}}" on-core-error="{{handleAddError}}"></core-ajax>
+</core-ajax>
+<core-ajax id="fileupload"
+           auto="false"
+           method="POST"
+           url="{{urlUpload}}"
+           handleas="json"
+           on-core-response="{{handleUploadResponse}}"></core-ajax>
+</core-ajax>
+<core-ajax id="updatePost"
+           auto="false"
+           method="POST"
+           url="{{url}}"
+           handleas="json"
            on-core-response="{{handleAddResponse}}" on-core-error="{{handleAddError}}"></core-ajax>
 </core-ajax>
 </template>
 <script>
-    jQuery.contains = function () {
-        return true;
-    };
-    var menuLeft = document.getElementById('cbp-spmenu-s1'),
-        showLeft = document.getElementById('showLeft'),
-        body = document.body;
-    var polymerElement = '';
-    Polymer('my-desk', {
-        detached: function () {
-        },
-        ready: function () {
-            polymerElement = this;
-            this.settings = JSON.parse(this.settings);
-            if (typeof this.posts != 'undefined')
-                this.posts = JSON.parse(this.posts);
-            else {
-                this.posts = [];
-            }
-            this.url = '/site/set-settings';
-            this.urladd = '/site/add-post';
-        },
-        clickHandler: function () {
-            var current = this.$.menuIcon,
-                menuLeft = this.$.cbpspmenus1;
-            classie.toggle(current, 'active');
-            classie.toggle(menuLeft, 'cbp-spmenu-open');
-        },
-        doSend: function (event, detail, sender) {
-            try {
-                this.$.ajax.go();
-            }
-            catch (e) {
-                alert(e.message);
-            }
-        },
-        handleError: function (event, detail, sender) {
-        },
-        handleResponse: function (event, detail, sender) {
-            if (detail.response) {
-                if (detail.response.msg == "ok") {
-                    var newSettings = detail.response.settings;
-                    this.settings.view = newSettings.view;
-                    this.settings.mail = newSettings.mail;
-                    this.settings.gmail = newSettings.gmail;
-                    this.settings.yandex = newSettings.yandex;
-                }
-            }
-        },
-        handleChange: function () {
-            this.error = '';
-        },
-        handleToggle: function (event, detail, sender) {
-            this.settings.view = sender.checked ? 1 : 0;
-            var test = 1;
-        },
-
-        handleAdd: function (event, detail, sender) {
-            try {
-                this.$.addajax.go();
-            }
-            catch (e) {
-                alert(e.message);
-            }
-        },
-        removePost: function (event, detail, sender) {
-            var id = sender.id;
-            var postId = id.substr(5);
-            test = 1;
-
-            $.ajax({
-                method: "POST",
-                url: "/site/remove-post",
-                data: { id: postId, ajax: "remove-post" },
-                success: function () {
-                    var counter = 0;
-                    for (var i = 0; i < polymerElement.posts.length; i++) {
-                        if (polymerElement.posts[i].id == postId) {
-                            polymerElement.posts.splice(i, 1);
-                            break;
-                        }
-                    }
-                },
-                error: function () {
-
-                }
-            });
-        },
-
-        postChangeHandler: function (event, detail, sender) {
-            var id = sender.id;
-            var postId = id.substr(9);
-            test = 1;
-
-            $.ajax({
-                method: "POST",
-                url: "/site/edit-post",
-                data: { id: postId, url: sender.value, ajax: "update-post" },
-                success: function (data) {
-                    var counter = 0;
-                    var jsonData = JSON.parse(data);
-                    var widget = jsonData.widget
-                    for (var i = 0; i < polymerElement.posts.length; i++) {
-                        if (polymerElement.posts[i].id == postId) {
-                            polymerElement.posts[i] = widget;
-                            break;
-                        }
-                    }
-                },
-                error: function () {
-
-                }
-            });
-        },
-        handleAddError: function (event, detail, sender) {
-        },
-        handleAddResponse: function (event, detail, sender) {
-            if (detail.response) {
-                if (detail.response.msg == "ok") {
-                    this.posts.push(detail.response.widget);
-                }
-            }
-        },
-        handleEditError: function (event, detail, sender) {
-        },
-        handleEditResponse: function (event, detail, sender) {
-            if (detail.response) {
-                if (detail.response.msg == "ok") {
-                    this.posts.push(detail.response.widget);
-                }
-            }
-        },
-        incrementCounter: function () {
-            this.counter++;
+jQuery.contains = function () {
+    return true;
+};
+var menuLeft = document.getElementById('cbp-spmenu-s1'),
+    showLeft = document.getElementById('showLeft'),
+    body = document.body;
+var polymerElement = '';
+Polymer('my-desk', {
+    page: 0,
+    selectedItem: null,
+    noTransition: false,
+    detached: function () {
+    },
+    ready: function () {
+        polymerElement = this;
+        this.settings = JSON.parse(this.settings);
+        if (typeof this.posts != 'undefined')
+            this.posts = JSON.parse(this.posts);
+        else {
+            this.posts = [];
         }
-    })
-    ;
+        this.addType = 'default';
+        this.url = '/site/set-settings';
+        this.urladd = '/site/add-post';
+        this.urlUpload = '/site/upload-file';
+    },
+    //Side menu
+    clickHandler: function (event, detail, sender) {
+        if (sender.id == 'menuIcon') {
+            var current = this.$.menuIcon,
+                menuLeft = this.$.cbpspmenus1,
+                another = this.$.menuAdd,
+                anotherLeft = this.$.cbpspmenus2;
+        }
+        else if (sender.id == 'menuAdd') {
+            var current = this.$.menuAdd,
+                menuLeft = this.$.cbpspmenus2,
+                another = this.$.menuIcon,
+                anotherLeft = this.$.cbpspmenus1;
+        }
+        classie.removeClass(another, 'active');
+        classie.removeClass(anotherLeft, 'cbp-spmenu-open');
+        classie.toggle(current, 'active');
+        classie.toggle(menuLeft, 'cbp-spmenu-open');
+    },
+    doSend: function (event, detail, sender) {
+        try {
+            this.$.ajax.go();
+        }
+        catch (e) {
+            alert(e.message);
+        }
+    },
+    handleError: function (event, detail, sender) {
+    },
+    handleResponse: function (event, detail, sender) {
+        if (detail.response) {
+            if (detail.response.msg == "ok") {
+                var newSettings = detail.response.settings;
+                this.settings.view = newSettings.view;
+                this.settings.mail = newSettings.mail;
+                this.settings.gmail = newSettings.gmail;
+                this.settings.yandex = newSettings.yandex;
+            }
+        }
+    },
+    handleChange: function () {
+        this.error = '';
+    },
+
+    handleToggle: function (event, detail, sender) {
+        this.settings.view = sender.checked ? 1 : 0;
+        var test = 1;
+    },
+
+    //Add handler
+    handleAdd: function (event, detail, sender) {
+        switch (sender.id) {
+            case 'addIcon':
+            {
+                this.addType = 'icon';
+                break;
+            }
+            case 'addClock':
+            {
+                this.addType = 'clock';
+                break;
+            }
+            case 'addGoogleCalendar':
+            {
+                this.addType = 'calendar';
+                break;
+            }
+            case 'addWeather':
+            {
+                this.addType = 'weather';
+                break;
+            }
+            case 'addMaps':
+            {
+                this.addType = 'maps';
+                break;
+            }
+            case 'addFlickr':
+            {
+                this.addType = 'flickr';
+                break;
+            }
+            case 'addWolfram':
+            {
+                this.addType = 'wolfram';
+                break;
+            }
+            default :
+            {
+                this.addType = 'default';
+            }
+        }
+        try {
+            this.$.addajax.go();
+        }
+        catch (e) {
+            alert(e.message);
+        }
+    },
+
+    handleAddError: function (event, detail, sender) {
+    },
+    handleAddResponse: function (event, detail, sender) {
+        if (detail.response) {
+            if (detail.response.msg == "ok") {
+                this.posts.push(detail.response.widget);
+            }
+        }
+    },
+
+    //Remove handler
+    removePost: function (event, detail, sender) {
+        var id = sender.id;
+        var postId = id.substr(5);
+        test = 1;
+
+        $.ajax({
+            method: "POST",
+            url: "/site/remove-post",
+            data: { id: postId, ajax: "remove-post" },
+            success: function () {
+                var counter = 0;
+                for (var i = 0; i < polymerElement.posts.length; i++) {
+                    if (polymerElement.posts[i].id == postId) {
+                        polymerElement.posts.splice(i, 1);
+                        break;
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
+    },
+    //Post change handler
+    postChangeHandler: function (event, detail, sender) {
+        var id = sender.id;
+        var postId = id.substr(9);
+        test = 1;
+
+        var currElement = '';
+        for (var i = 0; i < polymerElement.posts.length; i++) {
+            if (polymerElement.posts[i].id == postId) {
+                currElement = polymerElement.posts[i];
+                break;
+            }
+        }
+        $.ajax({
+            method: "POST",
+            url: "/site/edit-post",
+            data: { id: postId, url: sender.value, ajax: "update-post", type : currElement.type, settings: JSON.stringify(currElement.settings) },
+            success: function (data) {
+                var counter = 0;
+                var jsonData = JSON.parse(data);
+                var widget = jsonData.widget
+                for (var i = 0; i < polymerElement.posts.length; i++) {
+                    if (polymerElement.posts[i].id == postId) {
+                        polymerElement.posts[i] = widget;
+                        break;
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
+    },
+
+    handleEditError: function (event, detail, sender) {
+    },
+    handleEditResponse: function (event, detail, sender) {
+        if (detail.response) {
+            if (detail.response.msg == "ok") {
+                this.posts.push(detail.response.widget);
+            }
+        }
+    },
+    incrementCounter: function () {
+        this.counter++;
+    },
+
+    //FileUpload
+    setFiles: function (e, detail, sender) {
+        var formData = new FormData();
+
+        for (var i = 0, f; f = sender.files[i]; ++i) {
+            formData.append(sender.name, f, f.name);
+        }
+
+        formData.append('postId', sender.id.substr(4));
+        this.$.fileupload.body = formData;
+        // Override default type set by core-ajax.
+        // Allow browser to set the mime multipart content type itself.
+        this.$.fileupload.contentType = null;
+        this.upload(e, detail, sender);
+
+    },
+    upload: function (e, detail, sender) {
+        if (!this.$.file.files.length) {
+            alert('Please include a file');
+            return;
+        }
+        this.$.fileupload.go();
+    },
+    handleUploadResponse: function (e, detail, sender) {
+        if (detail.response) {
+            if (detail.response.msg == "ok") {
+                this.posts.push(detail.response.widget);
+            }
+        }
+    },
+
+    settingsToggle: function (e, detail, sender) {
+
+    }
+})
+;
 </script>
 </polymer-element>
