@@ -2,6 +2,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+    <script src="/assets/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body>
 

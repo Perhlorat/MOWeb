@@ -287,7 +287,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bower_components/roboto-fontface/css/roboto-fontface.css"/>
 
     <script src="/assets/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="/assets/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/assets/js/jquery-ui/jquery-ui.min.css"/>
 

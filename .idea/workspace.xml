@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/protected/controllers/SiteController.php" line="234" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/protected/controllers/SiteController.php" line="248" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="058dfca2-297c-4c3f-8a0c-08ba0ba60855" name="Default" comment="" />
@@ -28,69 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="my-desk.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="my-desk.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/views/polymer/my-desk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="678" column="122" selection-start="25050" selection-end="25050" vertical-scroll-proportion="-1.4473684" vertical-offset="11416" max-vertical-offset="12784">
-              <folding>
-                <element signature="n#style#0;n#core-toolbar#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-button#0;n#div#4;n#div#0;n#nav#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#template#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#template#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="384" column="14" selection-start="14450" selection-end="14450" vertical-scroll-proportion="0.8809107" vertical-offset="6025" max-vertical-offset="12308">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,19 +40,40 @@
       <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="37" selection-end="237" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="6035">
+            <state line="289" column="67" selection-start="23481" selection-end="23633" vertical-scroll-proportion="0.0" vertical-offset="4913" max-vertical-offset="6035">
               <folding>
-                <marker date="1433621626833" expanded="true" signature="911:949" placeholder="..." />
+                <marker date="1433685092597" expanded="true" signature="911:949" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="348" column="0" selection-start="10608" selection-end="10608" vertical-scroll-proportion="0.4671916" vertical-offset="5738" max-vertical-offset="6681">
+            <state line="114" column="14" selection-start="3646" selection-end="3646" vertical-scroll-proportion="0.0" vertical-offset="1599" max-vertical-offset="6919">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maps.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/site/maps.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="42" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weather.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/site/weather.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="258" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
+              <folding>
+                <marker date="1433679076243" expanded="true" signature="104:425" placeholder="..." />
+                <marker date="1433679076243" expanded="true" signature="114:418" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +81,7 @@
       <file leaf-file-name="empty.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/layouts/empty.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
+            <state line="5" column="67" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -127,7 +90,7 @@
       <file leaf-file-name="wolfram.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/site/wolfram.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="119">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
               <folding />
             </state>
           </provider>
@@ -136,7 +99,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="323">
+            <state line="13" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -183,10 +146,12 @@
         <option value="$PROJECT_DIR$/db/migrations/2015_05_16_22_18_50.php" />
         <option value="$PROJECT_DIR$/db/migrations/2015_06_06_19_07_53.php" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
-        <option value="$PROJECT_DIR$/protected/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/protected/views/site/wolfram.php" />
-        <option value="$PROJECT_DIR$/protected/views/layouts/empty.php" />
+        <option value="$PROJECT_DIR$/protected/views/site/weather.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/empty.php" />
+        <option value="$PROJECT_DIR$/protected/views/site/maps.php" />
         <option value="$PROJECT_DIR$/protected/views/polymer/my-desk.php" />
       </list>
     </option>
@@ -235,6 +200,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,6 +287,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -339,9 +327,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,6 +361,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\MOWeb\protected\views\site" />
       <recent name="C:\xampp\htdocs\MOWeb\protected\views\polymer" />
       <recent name="C:\xampp\htdocs\MOWeb\assets" />
     </key>
@@ -369,6 +371,9 @@
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Application.project">
+    <configuration default="false" name="my-desk.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/protected/views/polymer/my-desk.php">
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -393,9 +398,15 @@
       <ConfigurationWrapper RunnerId="PhpRunner" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="PHP Web Application.project" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.my-desk.php" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.my-desk.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -433,7 +444,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2510981" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2510981" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3191824" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -489,27 +500,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/protected/controllers/SiteController.php</url>
-          <line>213</line>
+          <line>227</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/protected/controllers/SiteController.php</url>
-          <line>293</line>
+          <line>307</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/protected/controllers/SiteController.php</url>
-          <line>298</line>
+          <line>312</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/protected/controllers/SiteController.php</url>
-          <line>143</line>
+          <line>157</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/protected/controllers/SiteController.php</url>
-          <line>348</line>
+          <line>362</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
@@ -517,16 +528,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../yii/framework/web/CWebApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="545" column="0" selection-start="17363" selection-end="17363" vertical-scroll-proportion="-6.6538463" vertical-offset="8973" max-vertical-offset="9282" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/paper-input/paper-input.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="0" selection-start="1684" selection-end="3782" vertical-scroll-proportion="-9.5" vertical-offset="2218" max-vertical-offset="2567" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/LoginForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="44" selection-start="1649" selection-end="1649" vertical-scroll-proportion="-4.769231" vertical-offset="1049" max-vertical-offset="1411" />
@@ -699,9 +700,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="354">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="354" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/core-animated-pages/demos/music.html">
@@ -713,78 +712,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/core-animated-pages/demos/quiz1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1282" selection-end="6761" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="4573">
-          <folding />
-        </state>
+        <state line="40" column="0" selection-start="1282" selection-end="6761" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="4573" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrations/2015_05_15_22_05_47.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="644" selection-end="644" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
+        <state line="26" column="0" selection-start="644" selection-end="644" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrations/2015_05_16_22_18_50.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="63" selection-start="208" selection-end="362" vertical-scroll-proportion="-6.6153846" vertical-offset="32" max-vertical-offset="595">
-          <folding>
-            <marker date="1433610514343" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610514343" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610514343" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-          </folding>
-        </state>
+        <state line="12" column="63" selection-start="208" selection-end="362" vertical-scroll-proportion="-6.6153846" vertical-offset="32" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrations/2015_06_06_19_07_53.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="5" selection-start="106" selection-end="106" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="459">
-          <folding>
-            <marker date="1433610613667" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610613667" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610613667" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610613667" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610613667" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-            <marker date="1433610613667" expanded="true" signature="-1:-1" placeholder="ALTER TABLE ..." />
-          </folding>
-        </state>
+        <state line="6" column="5" selection-start="106" selection-end="106" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="459" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../yii/framework/web/CHttpSession.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="0" selection-start="5350" selection-end="5350" vertical-scroll-proportion="-4.423077" vertical-offset="2010" max-vertical-offset="9707">
-          <folding />
-        </state>
+        <state line="132" column="0" selection-start="5350" selection-end="5350" vertical-scroll-proportion="-4.423077" vertical-offset="2010" max-vertical-offset="9707" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/core-animated-pages/demos/nested-animated-pages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="729" selection-end="3075" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="2023">
-          <folding />
-        </state>
+        <state line="13" column="0" selection-start="729" selection-end="3075" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="2023" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="323">
+        <state line="13" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="39" selection-start="3146" selection-end="3146" vertical-scroll-proportion="-14.5" vertical-offset="1085" max-vertical-offset="1649">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="37" selection-end="237" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="6035">
-          <folding>
-            <marker date="1433621626833" expanded="true" signature="911:949" placeholder="..." />
-          </folding>
-        </state>
+        <state line="89" column="39" selection-start="3146" selection-end="3146" vertical-scroll-proportion="-14.5" vertical-offset="1085" max-vertical-offset="1649" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/site/wolfram.php">
@@ -794,81 +759,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/empty.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/site/weather.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/polymer/my-desk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="678" column="122" selection-start="25050" selection-end="25050" vertical-scroll-proportion="-1.4473684" vertical-offset="11416" max-vertical-offset="12784">
+        <state line="4" column="258" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
           <folding>
-            <element signature="n#style#0;n#core-toolbar#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-button#0;n#div#4;n#div#0;n#nav#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#div#0;n#template#0;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#template#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#template#0;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#1;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#0;n#template#2;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#3;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#4;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#5;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#paper-input#0;n#div#0;n#core-toolbar#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#0;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#1;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#template#1;n#div#0;n#template#6;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#core-toolbar#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#7;n#template#0;n#div#0;n#div#0;n#template#0;n#polymer-element#0;n#!!top" expanded="true" />
+            <marker date="1433679076243" expanded="true" signature="104:425" placeholder="..." />
+            <marker date="1433679076243" expanded="true" signature="114:418" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="348" column="0" selection-start="10608" selection-end="10608" vertical-scroll-proportion="0.4671916" vertical-offset="5738" max-vertical-offset="6681">
+        <state line="114" column="14" selection-start="3646" selection-end="3646" vertical-scroll-proportion="0.0" vertical-offset="1599" max-vertical-offset="6919">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="289" column="67" selection-start="23481" selection-end="23633" vertical-scroll-proportion="0.0" vertical-offset="4913" max-vertical-offset="6035">
+          <folding>
+            <marker date="1433685092597" expanded="true" signature="911:949" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/empty.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="67" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/site/maps.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="42" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/polymer/my-desk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="384" column="14" selection-start="14450" selection-end="14450" vertical-scroll-proportion="0.8809107" vertical-offset="6025" max-vertical-offset="12308">
           <folding />
         </state>
       </provider>

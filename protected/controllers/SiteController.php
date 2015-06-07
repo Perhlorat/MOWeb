@@ -104,6 +104,20 @@ class SiteController extends Controller
         $this->render('wolfram');
     }
 
+    //Wolfram widget
+    public function actionWeather()
+    {
+        $this->layout = 'empty';
+        $this->render('weather');
+    }
+
+    //Wolfram widget
+    public function actionMaps()
+    {
+        $this->layout = 'empty';
+        $this->render('maps');
+    }
+
     //flickr API
     public function actionFlickr()
     {

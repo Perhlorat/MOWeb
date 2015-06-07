@@ -169,24 +169,8 @@
         <h3>Settings</h3>
 
         <div center horizontal layout class="settingDiv">
-            <div flex>Custom view</div>
-            <template if="{{ settings.view == 0 }}">
-                <paper-toggle-button value={{settings.view}} on-change="{{handleToggle}}"
-                                     id="settingsView"></paper-toggle-button>
-            </template>
-            <template if="{{ settings.view == 1 }}">
-                <paper-toggle-button value={{settings.view}} on-change="{{handleToggle}}" id="settingsView"
-                                     checked></paper-toggle-button>
-            </template>
-        </div>
-        <div center horizontal layout class="settingDiv">
-            <paper-input flex floatingLabel label="Gmail email" value="{{settings.gmail}}"></paper-input>
-        </div>
-        <div center horizontal layout class="settingDiv">
-            <paper-input flex floatingLabel label="Yandex email" value="{{settings.yandex}}"></paper-input>
-        </div>
-        <div center horizontal layout class="settingDiv">
-            <paper-input flex floatingLabel label="Mail.ru email" value="{{settings.mail}}"></paper-input>
+            <paper-input flex floatingLabel label="Gmail email(for calendar)"
+                         value="{{settings.showGmail}}"></paper-input>
         </div>
         <div center horizontal layout class="settingDiv">
             <paper-button on-click="{{doSend}}" raised style="margin: 0 auto;">Send</paper-button>
@@ -260,16 +244,9 @@
          style="width: 350px;  height: 350px;"
          id="card[[post.id]]">
         <core-toolbar style="background: #ffffff; width: 100%;">
-            <div horizontal center-justified layout class="settings" id="settings-content[[page.id]]"
-                 style="position:absolute; display:none">
+            <div horizontal center-justified layout style="width:100%">
                 <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
                              on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
-                <input type="file" name="File" id="file[[post.id]]" on-change="{{setFiles}}">
-                <input type="hidden" id="filename[[post.id]]" name="filename"/>
-            </div>
-            <paper-icon-button left id="settings[[post.id]]" icon="settings"
-                               on-click="{{settingsToggle}}"></paper-icon-button>
-            <div horizontal center-justified flex>
             </div>
             <div horizontal end-justified layout flex></div>
             <paper-icon-button id="close[[post.id]]" icon="close"
@@ -277,8 +254,9 @@
         </core-toolbar>
         <template if="{{post.url != ''}}">
             <a href="{{post.url}}" target="_blank" style="width: 100%; height: 100%">
-                <img style="margin: auto auto" src="http://www.google.com/s2/favicons?domain=[[post.url]]"
-                     width="64" height="64"/>
+                <img style="max-width: 320px; max-height:320px;   margin-top: 33px;  margin-left: 26px;"
+                     src="/files/polymer-logo.svg"
+                    />
             </a>
         </template>
         <template if="{{post.url == ''}}">
@@ -310,8 +288,8 @@
              style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
             <div style="margin:0 auto">
                 <iframe scrolling="no" frameborder="no"
-                        style="overflow:hidden;border:0;margin:0;padding:0;width:150px;height:150px;"
-                        src="http://www.clocklink.com/html5embed.php?clock=001&timezone=GMT0600&color=blue&size=150&Title=&Message=&Target=&From=2015,1,1,0,0,0&Color=blue"></iframe>
+                        style="overflow:hidden;border:0;margin:0;padding:0;width:250px;height:250px;"
+                        src="http://www.clocklink.com/html5embed.php?clock=001&timezone=GMT0600&color=blue&size=250&Title=&Message=&Target=&From=2015,1,1,0,0,0&Color=blue"></iframe>
             </div>
         </div>
         <!--</template>-->
@@ -319,25 +297,22 @@
 </template>
 <template if="{{post.type == 'calendar'}}">
     <div class="card draggable" vertical center center-justified
-         style="  width: 480px;   height: 350px;"
+         style="  width: 540px;   height: 350px;"
          id="card[[post.id]]">
         <core-toolbar style="background: #ffffff; width: 100%;">
-            <div horizontal center-justified layout style="width:100%">
-                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
-                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
-            </div>
+            <div horizontal end-justified layout flex></div>
             <paper-icon-button id="close[[post.id]]" icon="close"
                                on-click="{{removePost}}"></paper-icon-button>
         </core-toolbar>
-        <template if="{{post.url != ''}}">
-            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
-                    frameborder="0"></iframe>
+        <template if="{{settings.gmail != ''}}">
+            <iframe src="https://www.google.com/calendar/embed?src={{settings.gmail}}&ctz=Asia/Aqtau" style="border: 0"
+                    width="540" height="320" frameborder="0" scrolling="no"></iframe>
         </template>
-        <template if="{{post.url == ''}}">
+        <template if="{{settings.gmail == ''}}">
             <div layout horizontal center
                  style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
                 <div style="margin:0 auto">
-                    <span style="color:#000000">Empty Url</span>
+                    <span style="color:#000000">Change Gmail please</span>
                 </div>
             </div>
         </template>
@@ -348,25 +323,12 @@
          style="  width: 480px;   height: 350px;"
          id="card[[post.id]]">
         <core-toolbar style="background: #ffffff; width: 100%;">
-            <div horizontal center-justified layout style="width:100%">
-                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
-                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
-            </div>
+            <div horizontal center-justified flex></div>
             <paper-icon-button id="close[[post.id]]" icon="close"
                                on-click="{{removePost}}"></paper-icon-button>
         </core-toolbar>
-        <template if="{{post.url != ''}}">
-            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
-                    frameborder="0"></iframe>
-        </template>
-        <template if="{{post.url == ''}}">
-            <div layout horizontal center
-                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
-                <div style="margin:0 auto">
-                    <span style="color:#000000">Empty Url</span>
-                </div>
-            </div>
-        </template>
+        <iframe src="/site/weather" width="320" height="320" allowfullscreen
+                frameborder="0"></iframe>
     </div>
 </template>
 <template if="{{post.type == 'maps'}}">
@@ -374,35 +336,24 @@
          style="  width: 480px;   height: 350px;"
          id="card[[post.id]]">
         <core-toolbar style="background: #ffffff; width: 100%;">
-            <div horizontal center-justified layout style="width:100%">
-                <paper-input id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
-                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
-            </div>
+            <div horizontal end-justified layout flex></div>
             <paper-icon-button id="close[[post.id]]" icon="close"
                                on-click="{{removePost}}"></paper-icon-button>
         </core-toolbar>
-        <template if="{{post.url != ''}}">
-            <iframe src="{{post.url}}" width="320" height="205" allowfullscreen
+            <iframe src="/site/maps" width="480" height="320" allowfullscreen
                     frameborder="0"></iframe>
-        </template>
-        <template if="{{post.url == ''}}">
-            <div layout horizontal center
-                 style=" max-height:315px; max-width:560px; width: 1920px; height: 1080px">
-                <div style="margin:0 auto">
-                    <span style="color:#000000">Empty Url</span>
-                </div>
-            </div>
-        </template>
     </div>
 </template>
+<!--
 <template if="{{post.type == 'flickr'}}">
     <div class="card draggable" vertical center center-justified layout
          style="  width: 480px;   height: 350px;"
          id="card[[post.id]]">
         <core-toolbar style="background: #ffffff; width: 100%;">
             <div horizontal center-justified layout style="width:100%">
-                <paper-input id="cardInput[[post.id]]" label="Enter url" value="www.flickr.com/photos/{{post.url}}"
-                             on-change="{{postChangeHandler}}" style="width:100%"></paper-input>
+                <span style="color: #000;  width: 492px;  margin-top: 29px;">www.flickr.com/photos/</span>
+                <paper-input inline id="cardInput[[post.id]]" label="Enter url" value="{{post.url}}"
+                             on-change="{{fickrChangeHandler}}" style="width:100%"></paper-input>
             </div>
             <paper-icon-button id="close[[post.id]]" icon="close"
                                on-click="{{removePost}}"></paper-icon-button>
@@ -420,8 +371,6 @@
                            flashvars="offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Fpucki%2Fshow&amp;page_show_back_url=%2Fphotos%2Fpucki%2F&amp;user_id=44542478@N03"
                            allowFullScreen="true"/>
                 </object>
-                <br/>
-                <small>Created with <a href="http://www.flickrslideshow.com">flickr slideshow</a>.</small>
             </div>
         </template>
         <template if="{{post.url == ''}}">
@@ -433,10 +382,10 @@
             </div>
         </template>
     </div>
-</template>
+</template>-->
 <template if="{{post.type == 'wolfram'}}">
     <div class="card draggable" vertical center center-justified layout
-         style="  width: 480px;   height: 350px;"
+         style="  width: 350px;   height: 350px;"
          id="card[[post.id]]">
         <core-toolbar style="background: #ffffff; width: 100%;">
             <!--<div horizontal center-justified layout style="width:100%">
@@ -516,6 +465,7 @@ Polymer('my-desk', {
     ready: function () {
         polymerElement = this;
         this.settings = JSON.parse(this.settings);
+        this.settings.showGmail = this.settings.gmail.replace("%40", "@");
         if (typeof this.posts != 'undefined')
             this.posts = JSON.parse(this.posts);
         else {
@@ -546,6 +496,8 @@ Polymer('my-desk', {
         classie.toggle(menuLeft, 'cbp-spmenu-open');
     },
     doSend: function (event, detail, sender) {
+        this.settings.gmail = this.settings.showGmail;
+        this.settings.gmail = this.settings.gmail.replace("@", "%40");
         try {
             this.$.ajax.go();
         }
@@ -676,7 +628,7 @@ Polymer('my-desk', {
         $.ajax({
             method: "POST",
             url: "/site/edit-post",
-            data: { id: postId, url: sender.value, ajax: "update-post", type : currElement.type, settings: JSON.stringify(currElement.settings) },
+            data: { id: postId, url: sender.value, ajax: "update-post", type: currElement.type, settings: JSON.stringify(currElement.settings) },
             success: function (data) {
                 var counter = 0;
                 var jsonData = JSON.parse(data);
@@ -738,8 +690,28 @@ Polymer('my-desk', {
         }
     },
 
-    settingsToggle: function (e, detail, sender) {
+    fickrChangeHandler: function (e, detail, sender) {
+        console.log(sender);
+        var id = sender.id;
+        var postId = id.substr(5);
 
+        $.ajax({
+            method: "POST",
+            url: "/site/flickr",
+            data: { id: postId, ajax: "remove-post" },
+            success: function () {
+                var counter = 0;
+                for (var i = 0; i < polymerElement.posts.length; i++) {
+                    if (polymerElement.posts[i].id == postId) {
+                        polymerElement.posts.splice(i, 1);
+                        break;
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
     }
 })
 ;
